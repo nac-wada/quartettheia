@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
@@ -7,12 +7,43 @@ if (started) {
   app.quit();
 }
 
+let splashWindow: BrowserWindow;
+let mainWindow: BrowserWindow;
+
 const createWindow = () => {
+
+  splashWindow = new BrowserWindow({
+    show: false,
+    width: 400,
+    height: 300,
+    frame: false,
+    webPreferences: { 
+      nodeIntegration: true,
+      contextIsolation: true,
+    }
+  })
+
+  // 読み込みが完了した瞬間に表示する
+  splashWindow.once('ready-to-show', () => {
+    splashWindow.show();
+  });
+
+  // and load the index.html of the app.
+  if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+    splashWindow.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}/splash.html`);
+  } else {
+    splashWindow.loadFile(
+      path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/splash.html`),
+    );
+  }
+
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
+    show: false,
     width: 800,
     height: 600,
     webPreferences: {
+      nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
@@ -27,8 +58,22 @@ const createWindow = () => {
   }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
+  // splashWindow.webContents.openDevTools();
+  // splashWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
+  //   console.log(`スプラッシュ画面の読み込み失敗: ${errorDescription} (${errorCode})`);
+  // });
+
+  // コンソールにログを出させるためにDevToolsを強制起動
+  splashWindow.webContents.openDevTools({ mode: 'detach' });
 };
+
+ipcMain.on('app-ready', () => {
+  if (splashWindow) {
+    splashWindow.close(); // スプラッシュを閉じる
+  }
+  mainWindow.show(); // メイン画面を表示
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
