@@ -1,7 +1,57 @@
 import { createRoot } from 'react-dom/client';
-import App from './app';
+import './index.css';
+import App from './AppRouterProvider';
+import './i18n/config'; // 国際化,多言語化
+import { DebugProvider } from './globalContexts/DebugContext'; // for virtual camera (delete)
+import { DebugProviderDrawer } from './globalContexts/DebugDrawerContext'; // for drawer (delete)
+import { ProviderAuth } from './globalContexts/AuthContext' // for login Authentication
+import { ProviderDrawerOpen } from './globalContexts/DrawerContext'; // for left drawer
+import { HelmetProvider } from 'react-helmet-async'; // for changing app title
+import { RamPercentDisplayProvider } from './globalContexts/RamPercentContext';
+import { DeviceProvider } from './globalContexts/DeviceContext';
+import { MessagesProvider } from './globalContexts/MessagesContext';
+import { SoloSubscribeEventProvider } from './globalContexts/SoloSubscribeEventContext';
+import { NotificationProvider } from './globalContexts/NotificationContext';
+import { AppThemeProvider } from './globalContexts/AppThemeContext';
+import { QuartetSubscribeEventProvider } from './globalContexts/QuartetSubscribeEventContext';
+import { QuartetSubscribeMessageProvider } from './globalContexts/QuartetSubscribeMessageContext';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { CalibrationModeProvider } from './globalContexts/CalibrationTypeContext';
+
+export const queryClient = new QueryClient();
+
 
 const root = createRoot(document.body);
 root.render(
-	<App />
+	<HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <ProviderAuth> {/* login Authentication */}
+        <DebugProvider> {/* virtual camera (仮想カメラ数入力機能) : 削除予定 */}
+          <DebugProviderDrawer> {/* drawer (初期メニュー項目表示機能) : 削除予定 */}
+            <RamPercentDisplayProvider>
+              <AppThemeProvider> {/* dark mode  */}
+                <ProviderDrawerOpen> {/* open left drawer  */}
+                  <MessagesProvider>
+                    <NotificationProvider>
+                      <CalibrationModeProvider>
+                        <QuartetSubscribeMessageProvider>
+                          <QuartetSubscribeEventProvider>
+                            <DeviceProvider> {/* camera sigurls */}
+                              <SoloSubscribeEventProvider>
+                                <App />
+                              </SoloSubscribeEventProvider>
+                            </DeviceProvider>
+                          </QuartetSubscribeEventProvider>
+                        </QuartetSubscribeMessageProvider>
+                      </CalibrationModeProvider>
+                    </NotificationProvider>
+                  </MessagesProvider>
+                </ProviderDrawerOpen>
+              </AppThemeProvider>
+            </RamPercentDisplayProvider>
+          </DebugProviderDrawer>
+        </DebugProvider>
+      </ProviderAuth>
+    </QueryClientProvider>
+  </HelmetProvider>
 );

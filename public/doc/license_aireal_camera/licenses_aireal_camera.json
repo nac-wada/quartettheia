@@ -1,0 +1,164 @@
+{
+  "licenses": [
+    {
+      "file": "aws-sdk-go-v2",
+      "title": "aws-sdk-go-v2",
+      "url": "https://github.com/aws/aws-sdk-go-v2?tab=Apache-2.0-1-ov-file#readme"
+    },
+    {
+      "file": "connect",
+      "title": "connect",
+      "url": "https://pkg.go.dev/connectrpc.com/connect"
+    },
+    {
+      "file": "cors",
+      "title": "cors",
+      "url": "https://github.com/rs/cors?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "distroless",
+      "title": "distroless",
+      "url": "https://github.com/GoogleContainerTools/distroless?tab=License-1-ov-file"
+    },
+    {
+      "file": "dns",
+      "title": "dns",
+      "url": "https://github.com/miekg/dns?tab=BSD-3-Clause-1-ov-file"
+    },
+    {
+      "file": "docker",
+      "title": "docker",
+      "url": "https://github.com/moby/moby?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "docker-compose",
+      "title": "docker-compose",
+      "url": "https://github.com/docker/compose?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "exp",
+      "title": "exp",
+      "url": "https://golang.org/x/exp"
+    },
+    {
+      "file": "FreeRTOS-Kernel",
+      "title": "FreeRTOS-Kernel",
+      "url": "https://github.com/raspberrypi/FreeRTOS-Kernel?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "go-serial",
+      "title": "go-serial",
+      "url": "https://github.com/bugst/go-serial?tab=BSD-3-Clause-1-ov-file"
+    },
+    {
+      "file": "golang",
+      "title": "golang",
+      "url": "https://github.com/golang/go?tab=BSD-3-Clause-1-ov-file"
+    },
+    {
+      "file": "google_uuid",
+      "title": "google/uuid",
+      "url": "https://github.com/google/uuid?tab=License-1-ov-file"
+    },
+    {
+      "file": "google_protobuf",
+      "title": "google/protobuf",
+      "url": "https://pkg.go.dev/google.golang.org/protobuf"
+    },
+    {
+      "file": "gopsutil",
+      "title": "gopsutil",
+      "url": "https://github.com/shirou/gopsutil?tab=License-1-ov-file"
+    },
+    {
+      "file": "libgpiod",
+      "title": "libgpiod",
+      "url": "https://web.git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/tree/LICENSES/LGPL-2.1-or-later.txt"
+    },
+    {
+      "file": "mp4ff",
+      "title": "mp4ff",
+      "url": "https://github.com/Eyevinn/mp4ff?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "net",
+      "title": "net",
+      "url": "https://pkg.go.dev/golang.org/x/net"
+    },
+    {
+      "file": "NGINX",
+      "title": "NGINX",
+      "url": "https://nginx.org/LICENSE"
+    },
+    {
+      "file": "ntp",
+      "title": "ntp",
+      "url": "https://github.com/beevik/ntp?tab=BSD-2-Clause-1-ov-file#readme"
+    },
+    {
+      "file": "NVIDIA_Container_Toolkit",
+      "title": "NVIDIA Container Toolkit",
+      "url": "https://github.com/NVIDIA/nvidia-container-toolkit"
+    },
+    {
+      "file": "NVIDIA_CUDA_Toolkit",
+      "title": "NVIDIA CUDA Toolkit",
+      "url": "https://developer.nvidia.com/cuda-toolkit"
+    },
+    {
+      "file": "NVIDIA_JetPack",
+      "title": "NVIDIA JetPack",
+      "url": "https://docs.nvidia.com/jetson/archives/jetpack-archived/jetpack-514/eula/index.html"
+    },
+    {
+      "file": "NVIDIA_Jetson_Linux_API",
+      "title": "NVIDIA Jetson Linux API",
+      "url": "https://docs.nvidia.com/jetson/archives/r35.6.0/ApiReference/index.html"
+    },
+    {
+      "file": "NVIDIA_L4T",
+      "title": "NVIDIA L4T",
+      "url": "https://developer.download.nvidia.com/embedded/L4T/r35_Release_v6.0/release/Tegra_Software_License_Agreement-Tegra-Linux.txt?t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9"
+    },
+    {
+      "file": "OpenCV",
+      "title": "OpenCV",
+      "url": "https://github.com/opencv/opencv/blob/4.x/LICENSE"
+    },
+    {
+      "file": "pico-sdk",
+      "title": "pico-sdk",
+      "url": "https://github.com/raspberrypi/pico-sdk?tab=BSD-3-Clause-1-ov-file"
+    },
+    {
+      "file": "ping",
+      "title": "ping",
+      "url": "https://github.com/go-ping/ping?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "smart.go",
+      "title": "smart.go",
+      "url": "https://github.com/anatol/smart.go?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "sys",
+      "title": "sys",
+      "url": "https://pkg.go.dev/golang.org/x/sys"
+    },
+    {
+      "file": "text",
+      "title": "text",
+      "url": "https://pkg.go.dev/golang.org/x/text"
+    },
+    {
+      "file": "VPI",
+      "title": "VPI",
+      "url": "https://docs.nvidia.com/vpi/index.html"
+    },
+    {
+      "file": "webrtc",
+      "title": "webrtc",
+      "url": "https://github.com/pion/webrtc?tab=MIT-1-ov-file"
+    }
+  ]
+}

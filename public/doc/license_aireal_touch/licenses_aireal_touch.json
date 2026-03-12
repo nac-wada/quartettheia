@@ -1,0 +1,325 @@
+{
+  "licenses": [
+    {
+      "file": "@bufbuild_protobuf",
+      "title": "@bufbuild/protobuf",
+      "url": "https://github.com/bufbuild/protobuf-es?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "@connectrpc_connect",
+      "title": "@connectrpc/connect",
+      "url": "https://github.com/connectrpc/connect-go?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "@connectrpc_connect-web",
+      "title": "@connectrpc/connect-web",
+      "url": "https://github.com/connectrpc/connect-es?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "@dnd-kit_core",
+      "title": "@dnd-kit/core",
+      "url": "https://github.com/clauderic/dnd-kit?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@dnd-kit_sortable",
+      "title": "@dnd-kit/sortable",
+      "url": "https://github.com/clauderic/dnd-kit?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@emotion_react",
+      "title": "@emotion/react",
+      "url": "https://github.com/emotion-js/emotion?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@emotion_styled",
+      "title": "@emotion/styled",
+      "url": "https://github.com/emotion-js/emotion/tree/main?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@mediapipe_tasks-vision",
+      "title": "@mediapipe/tasks-vision",
+      "url": "https://ai.google.dev/edge/mediapipe/solutions/guide?hl=ja"
+    },
+    {
+      "file": "@mui_icons-material",
+      "title": "@mui/icons-material",
+      "url": "https://github.com/mui/material-ui?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@mui_lab",
+      "title": "@mui/lab",
+      "url": "https://github.com/mui/material-ui?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@mui_material",
+      "title": "@mui/material",
+      "url": "https://github.com/mui/material-ui?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@react-three_drei",
+      "title": "@react-three/drei",
+      "url": "https://github.com/pmndrs/drei?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "@tanstack_react-query",
+      "title": "@tanstack/react-query",
+      "url": "https://github.com/tanstack/query?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "@testing-library_jest-dom",
+      "title": "@testing-library/jest-dom",
+      "url": "https://github.com/testing-library/jest-dom?tab=License-1-ov-file"
+    },
+    {
+      "file": "@testing-library_react",
+      "title": "@testing-library/react",
+      "url": "https://github.com/testing-library/react-testing-library?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@testing-library_user-event",
+      "title": "@testing-library/user-event",
+      "url": "https://github.com/testing-library/user-event?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "@tweenjs_tween.js",
+      "title": "@tweenjs/tween.js",
+      "url": "https://github.com/tweenjs/tween.js?tab=License-1-ov-file#readme"
+    },
+    {
+      "file": "@types_jest",
+      "title": "@types/jest",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "@types_node",
+      "title": "@types/node",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "@types_react",
+      "title": "@types/react",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "@types_react-dom",
+      "title": "@types/react-dom",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "@types_react-virtualized-auto-sizer",
+      "title": "@types/react-virtualized-auto-sizer",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+
+    {
+      "file": "@types_react-window-infinite-loader",
+      "title": "@types/react-window-infinite-loader",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "@types_three",
+      "title": "@types/three",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped?tab=License-1-ov-file"
+    },
+    {
+      "file": "caniuse-lite",
+      "title": "caniuse-lite",
+      "url": "https://github.com/browserslist/caniuse-lite?tab=CC-BY-4.0-1-ov-file"
+    },
+    {
+      "file": "clipboard-copy",
+      "title": "clipboard-copy",
+      "url": "https://github.com/feross/clipboard-copy?tab=License-1-ov-file"
+    },
+    {
+      "file": "dayjs",
+      "title": "dayjs",
+      "url": "https://github.com/iamkun/dayjs?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "embla-carousel",
+      "title": "embla-carousel",
+      "url": "https://github.com/davidjerleke/embla-carousel?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "encrypt-storage",
+      "title": "encrypt-storage",
+      "url": "https://github.com/michelonsouza/encrypt-storage?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "html2canvas",
+      "title": "html2canvas",
+      "url": "https://github.com/niklasvh/html2canvas?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "i18next",
+      "title": "i18next",
+      "url": "https://github.com/i18next/i18next?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "i18next-browser-languagedetector",
+      "title": "i18next-browser-languagedetector",
+      "url": "https://github.com/i18next/i18next-browser-languageDetector?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "leva",
+      "title": "leva",
+      "url": "https://github.com/pmndrs/leva?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "mathjs",
+      "title": "mathjs",
+      "url": "https://github.com/josdejong/mathjs?tab=Apache-2.0-1-ov-file#readme"
+    },
+    {
+      "file": "node-forge",
+      "title": "node-forge",
+      "url": "https://github.com/digitalbazaar/forge?tab=License-1-ov-file#readme"
+    },
+    {
+      "file": "notistack",
+      "title": "notistack",
+      "url": "https://github.com/iamhosseindhv/notistack?tab=License-1-ov-file"
+    },
+    {
+      "file": "react",
+      "title": "react",
+      "url": "https://github.com/facebook/react/?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-dom",
+      "title": "react-dom",
+      "url": "https://github.com/facebook/react?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-helmet-async",
+      "title": "react-helmet-async",
+      "url": "https://github.com/staylor/react-helmet-async?tab=Apache-2.0-1-ov-file#readme"
+    },
+    {
+      "file": "react-i18next",
+      "title": "react-i18next",
+      "url": "https://github.com/i18next/react-i18next?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "react-loops",
+      "title": "react-loops",
+      "url": "https://github.com/leebyron/react-loops"
+    },
+    {
+      "file": "react-markdown",
+      "title": "react-markdown",
+      "url": "https://github.com/remarkjs/react-markdown?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-overlays",
+      "title": "react-overlays",
+      "url": "https://github.com/react-bootstrap/react-overlays?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-player",
+      "title": "react-player",
+      "url": "https://github.com/cookpete/react-player?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-router-dom",
+      "title": "react-router-dom",
+      "url": "https://github.com/remix-run/react-router?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-scripts",
+      "title": "react-scripts",
+      "url": "https://github.com/facebook/create-react-app?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-sizeme",
+      "title": "react-sizeme",
+      "url": "https://github.com/ctrlplusb/react-sizeme?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-slick",
+      "title": "react-slick",
+      "url": "https://github.com/akiran/react-slick?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-three-fiber",
+      "title": "react-three-fiber",
+      "url": "https://github.com/pmndrs/react-three-fiber?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "react-timer-hook",
+      "title": "react-timer-hook",
+      "url": "https://github.com/amrlabib/react-timer-hook?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-virtualized-auto-sizer",
+      "title": "react-virtualized-auto-sizer",
+      "url": "https://github.com/bvaughn/react-virtualized-auto-sizer?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-virtuoso",
+      "title": "react-virtuoso",
+      "url": "https://github.com/petyosi/react-virtuoso?tab=readme-ov-file"
+    },
+    {
+      "file": "react-window",
+      "title": "react-window",
+      "url": "https://github.com/bvaughn/react-window?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "react-window-infinite-loader",
+      "title": "react-window-infinite-loader",
+      "url": "https://github.com/bvaughn/react-window-infinite-loader?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "recharts",
+      "title": "recharts",
+      "url": "https://github.com/recharts/recharts?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "screenfull",
+      "title": "screenfull",
+      "url": "https://github.com/sindresorhus/screenfull?tab=MIT-1-ov-file#readme"
+    },
+    {
+      "file": "stream",
+      "title": "stream",
+      "url": "https://github.com/juliangruber/stream"
+    },
+    {
+      "file": "styled-components",
+      "title": "styled-components",
+      "url": "https://github.com/styled-components/styled-components?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "three",
+      "title": "three",
+      "url": "https://github.com/mrdoob/three.js?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "ts-node",
+      "title": "ts-node",
+      "url": "https://github.com/TypeStrong/ts-node?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "typescript",
+      "title": "typescript",
+      "url": "https://github.com/Microsoft/TypeScript?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "uuid",
+      "title": "uuid",
+      "url": "https://github.com/uuidjs/uuid?tab=MIT-1-ov-file"
+    },
+    {
+      "file": "web-vitals",
+      "title": "web-vitals",
+      "url": "https://github.com/GoogleChrome/web-vitals?tab=Apache-2.0-1-ov-file"
+    },
+    {
+      "file": "xml-js",
+      "title": "xml-js",
+      "url": "https://github.com/nashwaan/xml-js?tab=MIT-1-ov-file"
+    }
+  ]
+}

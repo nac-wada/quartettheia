@@ -40,8 +40,8 @@ const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     show: false,
-    width: 800,
-    height: 600,
+    width: 1920,
+    height: 1080,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js'),
@@ -58,14 +58,8 @@ const createWindow = () => {
   }
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   // splashWindow.webContents.openDevTools();
-  // splashWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
-  //   console.log(`スプラッシュ画面の読み込み失敗: ${errorDescription} (${errorCode})`);
-  // });
-
-  // コンソールにログを出させるためにDevToolsを強制起動
-  splashWindow.webContents.openDevTools({ mode: 'detach' });
 };
 
 ipcMain.on('app-ready', () => {
