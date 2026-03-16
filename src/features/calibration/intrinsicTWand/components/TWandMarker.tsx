@@ -43,6 +43,7 @@ export const TWandMarker:FC<{
   const signal = controller.signal;
   const stableCountRef = useRef(0);
   const tooBrightRef = useRef(0);
+  const [isReported, setIsReported] = useState(false);
 
   // 1. 各エリアの生データを一時保存するバッファ (useRefでメモリ節約)
   // 構造: { cellIndex: { angles: [], lengths: [] } }
@@ -403,11 +404,17 @@ export const TWandMarker:FC<{
 
   // 親要素に十分な特徴点が得られたことを伝える。src\components\cameracalibration\intrinsicTWand\index.tsxのupdateCompletedCamerasにカメラidを渡す
   useEffect(() => {
-    if(isCameraReady && tWandMarkerPacketsRef.current) {
+    if(isCameraReady && tWandMarkerPacketsRef.current && !isReported) {
       updateCompletedCameras(id)
+      setIsReported(true);
     }
 
-  },[isCameraReady])
+  },[isCameraReady, isReported, id])
+
+  const visibleSegments = useMemo(() => {
+    const MAX_DISPLAY = 1000;
+    return segmentRef.current.slice(-MAX_DISPLAY);
+  },[segmentRef.current.length])
   
   return (
     <>
@@ -440,7 +447,7 @@ export const TWandMarker:FC<{
             <Layer key={`wand_in_layer_${ipv4Addr}`}>
               <Shape
                 sceneFunc={(context, shape) => {
-                  const segments = segmentRef.current;
+                  const segments = visibleSegments;
                   if (segments.length === 0) return;
 
                   // 共通の設定

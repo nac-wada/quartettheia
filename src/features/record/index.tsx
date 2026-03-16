@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react"
+import { FC, useEffect, useMemo } from "react"
 import { grey } from "@mui/material/colors";
 import { useDevices } from "../../globalContexts/DeviceContext";
 import { useAppTheme } from "../../globalContexts/AppThemeContext";
@@ -93,6 +93,22 @@ const RecordView: FC = () => {
     fullScreenID: FULLSCREEN_ID
   }
 
+  let gridTemplateColumns = useMemo(() => {
+    if(devices.length===1) return `repeat(1, 1fr)`
+    if(devices.length > 6) { 
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)` }
+    } 
+    else if(devices.length > 4) {
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(3, 2fr)` }
+    }
+    else if(devices.length > 2) {
+      return `repeat(2, 1fr)`
+    }
+    else if(devices.length > 1) {
+      return `repeat(2, 1fr)`
+    }
+  },[devices.length])
+
   return (
     <>
       <FullScreenContainer 
@@ -164,7 +180,7 @@ const RecordView: FC = () => {
                     sx={{ 
                       display: "grid", 
                       gap: "10px",
-                      gridTemplateColumns: devices.length > 5 ? { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)`}: devices.length===1 ? `repeat(1, 1fr)` : `repeat(2, 1fr)`,
+                      gridTemplateColumns: gridTemplateColumns,
                       height: "100%", 
                     }}
                   >

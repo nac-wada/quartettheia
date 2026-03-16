@@ -1,7 +1,7 @@
 import { Box, Collapse, FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 import { useDevices } from "../../../globalContexts/DeviceContext"
 import { AppBarHeight, FooterHeight, FULLSCREEN_ID, getLocalStorageFocalLengthValue, lensMenuList, localStorage_Batch_FocalLength, localStorage_FocalLength_BatchMode_Enabled, MainAreaPaddingSpace, MessageModalProps } from "../../../types/common"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { soloGetCameraWhiteBalanceBlue, soloGetCameraWhiteBalanceRed, soloSetCalibrationLFrameMarkerSet, soloSetCalibratorDetectionMode, soloSetCameraWhiteBalanceAuto, soloSetCameraWhiteBalanceBlue, soloSetCameraWhiteBalanceRed } from "../../../api/soloAPI"
 import { loadSettingsFromLocalStorage, saveSettingsToLocalStorage } from "../../../utilities/localStorage"
 import { useBlocker } from "react-router-dom"
@@ -389,6 +389,22 @@ export const ExtrinsicLFrame = () => {
     }
   ]
 
+  let gridTemplateColumns = useMemo(() => {
+    if(devices.length===1) return `repeat(1, 1fr)`
+    if(devices.length > 6) { 
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)` }
+    } 
+    else if(devices.length > 4) {
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(3, 2fr)` }
+    }
+    else if(devices.length > 2) {
+      return `repeat(2, 1fr)`
+    }
+    else if(devices.length > 1) {
+      return `repeat(2, 1fr)`
+    }
+  },[devices.length])
+
   return (
     <>
       <FullScreenContainer
@@ -427,7 +443,7 @@ export const ExtrinsicLFrame = () => {
                 display: "grid",
                 width: "100%",
                 height: "100%",
-                gridTemplateColumns: devices.length > 5 ? { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)`}: devices.length===1 ? `repeat(1, 1fr)` : `repeat(2, 1fr)`,
+                gridTemplateColumns: gridTemplateColumns,
                 overflowY: "auto",
                 minHeight: 0,
                 p: {xs: "5px", md: "1rem"},

@@ -1,7 +1,7 @@
 import { Box, Theme, useMediaQuery } from "@mui/material"
 import { useDevices } from "../../../globalContexts/DeviceContext"
 import { AppBarHeight, FooterHeight, FULLSCREEN_ID, MainAreaPaddingSpace, MessageModalProps } from "../../../types/common"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { soloGetCameraWhiteBalanceBlue, soloGetCameraWhiteBalanceRed, soloSetCalibrationTWandMarkerSet, soloSetCalibratorDetectionMode, soloSetCameraWhiteBalanceAuto, soloSetCameraWhiteBalanceBlue, soloSetCameraWhiteBalanceRed } from "../../../api/soloAPI"
 import { loadSettingsFromLocalStorage, saveSettingsToLocalStorage } from "../../../utilities/localStorage"
 import { useBlocker } from "react-router-dom"
@@ -311,6 +311,22 @@ export const IntrinsicTWand = () => {
     }
   ]
 
+  let gridTemplateColumns = useMemo(() => {
+    if(devices.length===1) return `repeat(1, 1fr)`
+    if(devices.length > 6) { 
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)` }
+    } 
+    else if(devices.length > 4) {
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(3, 2fr)` }
+    }
+    else if(devices.length > 2) {
+      return `repeat(2, 1fr)`
+    }
+    else if(devices.length > 1) {
+      return `repeat(2, 1fr)`
+    }
+  },[devices.length])
+
   return (
     <>
       <FullScreenContainer
@@ -347,7 +363,7 @@ export const IntrinsicTWand = () => {
               sx={{ 
                 display: "grid", 
                 gap: "10px",
-                gridTemplateColumns: devices.length > 5 ? { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)`}: devices.length===1 ? `repeat(1, 1fr)` : `repeat(2, 1fr)`,
+                gridTemplateColumns: gridTemplateColumns,
                 height: "100%", 
                 width: "100%",
                 overflowY: "auto",

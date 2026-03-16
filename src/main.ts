@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain, Menu } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
@@ -48,11 +48,16 @@ if(!gotTheLock) {
       show: false,
       width: 1920,
       height: 1080,
+      minWidth: 1200,
+      minHeight: 600,
       webPreferences: {
         nodeIntegration: true,
         preload: path.join(__dirname, 'preload.js'),
       },
     });
+
+    // メニューバーを非表示にする
+    Menu.setApplicationMenu(null);
 
     // and load the index.html of the app.
     if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
@@ -64,7 +69,7 @@ if(!gotTheLock) {
     }
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
     // splashWindow.webContents.openDevTools();
   };
 
@@ -72,6 +77,8 @@ if(!gotTheLock) {
     if (splashWindow) {
       splashWindow.close(); // スプラッシュを閉じる
     }
+    // 画面最大化
+    mainWindow.maximize();
     mainWindow.show(); // メイン画面を表示
   })
 

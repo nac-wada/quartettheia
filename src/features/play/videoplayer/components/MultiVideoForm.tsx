@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { FC, memo } from "react";
+import { FC, memo, useMemo } from "react";
 import { MultiVideoPanel } from "./MultiVideoPanel";
 import { ReactPlayerVideo } from "./ReactPlayerVideo";
 import { FullScreenStateType } from "../../../../types/common";
@@ -17,6 +17,22 @@ export const MultiVideoForm: FC<
   const { openFullScreen, closeFullScreen, changeMode, fullScreenState } = fullScreenProps
   const { opened } = fullScreenState
 
+  let gridTemplateColumns = useMemo(() => {
+    if(videos.length===1) return `repeat(1, 1fr)`
+    if(videos.length > 6) { 
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)` }
+    } 
+    else if(videos.length > 4) {
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(3, 2fr)` }
+    }
+    else if(videos.length > 2) {
+      return `repeat(2, 1fr)`
+    }
+    else if(videos.length > 1) {
+      return `repeat(2, 1fr)`
+    }
+  },[videos.length])
+
   return (
     <Box sx={{ width: "100%", flex: 1, display: "flex", flexDirection: "column" }} onClick={e => e.stopPropagation()}>
       <Box sx={{ width: "100%", height: "100%", display: "flex", justifyContent: "center" }}>
@@ -24,7 +40,7 @@ export const MultiVideoForm: FC<
           sx={{ 
             display: "grid", 
             gap: "10px",  
-            gridTemplateColumns: videos.length > 5 ? { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)`}: videos.length===1 ? `repeat(1, 1fr)` : `repeat(2, 1fr)`,
+            gridTemplateColumns,
             height: "100%", 
             p: "0.5rem",
           }}

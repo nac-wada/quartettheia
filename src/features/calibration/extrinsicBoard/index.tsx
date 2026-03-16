@@ -95,6 +95,22 @@ export const ExtrinsicBoard = () => {
   let isCalibrationing = useMemo(() => {
     return calibrationCameras.length!==0
   },[calibrationCameras])
+
+  let gridTemplateColumns = useMemo(() => {
+    if(devices.length===1) return `repeat(1, 1fr)`
+    if(devices.length > 6) { 
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)` }
+    } 
+    else if(devices.length > 4) {
+      return { xs: `repeat(2, 1fr)`, lg: `repeat(3, 2fr)` }
+    }
+    else if(devices.length > 2) {
+      return `repeat(2, 1fr)`
+    }
+    else if(devices.length > 1) {
+      return `repeat(2, 1fr)`
+    }
+  },[devices.length])
   
   return (
     <>
@@ -126,8 +142,8 @@ export const ExtrinsicBoard = () => {
                 sx={{ 
                   display: "grid", 
                   gap: "10px",  
-                  gridTemplateColumns: devices.length > 5 ? { xs: `repeat(2, 1fr)`, lg: `repeat(4, 2fr)`}: devices.length===1 ? `repeat(1, 1fr)` : `repeat(2, 1fr)`,
                   height: "100%", 
+                  gridTemplateColumns: gridTemplateColumns
                 }}
               >
                 <DndContainer items={devices}>
