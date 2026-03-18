@@ -20,23 +20,29 @@ import { CalibrationModeProvider } from './globalContexts/CalibrationTypeContext
 
 export const queryClient = new QueryClient();
 
+const container = document.getElementById('root');
 
-const root = createRoot(document.body);
+if(!container) {
+  throw new Error('failed to find the root element.')
+}
+
+const root = createRoot(container);
+
 root.render(
 	<HelmetProvider>
     <QueryClientProvider client={queryClient}>
-      <ProviderAuth> {/* login Authentication */}
-        <DebugProvider> {/* virtual camera (仮想カメラ数入力機能) : 削除予定 */}
-          <DebugProviderDrawer> {/* drawer (初期メニュー項目表示機能) : 削除予定 */}
+      <ProviderAuth>
+        <DebugProvider>
+          <DebugProviderDrawer>
             <RamPercentDisplayProvider>
-              <AppThemeProvider> {/* dark mode  */}
-                <ProviderDrawerOpen> {/* open left drawer  */}
+              <AppThemeProvider>
+                <ProviderDrawerOpen>
                   <MessagesProvider>
                     <NotificationProvider>
                       <CalibrationModeProvider>
                         <QuartetSubscribeMessageProvider>
                           <QuartetSubscribeEventProvider>
-                            <DeviceProvider> {/* camera sigurls */}
+                            <DeviceProvider>
                               <SoloSubscribeEventProvider>
                                 <App />
                               </SoloSubscribeEventProvider>

@@ -73,13 +73,17 @@ if(!gotTheLock) {
     // splashWindow.webContents.openDevTools();
   };
 
-  ipcMain.on('app-ready', () => {
-    if (splashWindow) {
-      splashWindow.close(); // スプラッシュを閉じる
+  ipcMain.once('app-ready', () => {
+    // splashWindowが存在し、かつ「破壊されていない」場合のみcloseを呼ぶ
+    if (splashWindow && !splashWindow.isDestroyed()) {
+      splashWindow.close();
     }
-    // 画面最大化
-    mainWindow.maximize();
-    mainWindow.show(); // メイン画面を表示
+
+    // mainWindowも同様にチェックしておくと安全
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.maximize();
+      mainWindow.show();
+    }
   })
 
   // This method will be called when Electron has finished

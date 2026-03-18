@@ -114,7 +114,7 @@ const Text2Markdown = () => {
       const frontLicenseList: license[] = frontJsonData.map((data) => ({
         file: data.file,
         name: data.title,
-        document: null,
+        document: '',
         url: data.url,
       }));
       setFrontLicenses(frontLicenseList);
@@ -126,7 +126,7 @@ const Text2Markdown = () => {
       const backLicenseList: license[] = backJsonData.map((data) => ({
         file: data.file,
         name: data.title,
-        document: null,
+        document: '',
         url: data.url,
       }));
       setBackLicenses(backLicenseList);
